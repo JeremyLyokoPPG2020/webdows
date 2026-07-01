@@ -1,0 +1,5 @@
+<span class="min"></span>
+<span class="max"></span>
+<span class="close"></span>
+</span>```
+can <span class="min, max, close"> replace to <a class="min, max, close">?

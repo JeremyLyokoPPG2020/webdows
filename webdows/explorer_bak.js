@@ -455,17 +455,7 @@ var explorer = {
 			toggleMin : function() {},
 			toggleMax : function() {}
 		};
-		
-		// $('#desktop').append('<div class="window" windowID="'+this.id+'"><span class="ttl"><span class="icon"></span><span class="title"></span></span><span class="minmaxclose"><span class="close"></span></span><div class="body"></div></div>');
-
-		$('#desktop').append('<div class="window" windowID="'+this.id+'">'+
-							 	'<div class="title-bar">'+
-							 		'<div class="title-bar-text ttl"><span class="icon"></span><span class="title"></span></div>'+
-									// '<div class="title-bar-controls btn_row minmaxclose"><span><a class="btn_close close"></a></span></div>'+
-									'<div class="title-bar-controls btn_row minmaxclose"><a class="btn_close close"></a></div>'+
-							 	'</div>'+
-							 	'<div class="window-body window_inner body"></div>'+
-							 '</div>');
+		$('#desktop').append('<div class="window" windowID="'+this.id+'"><span class="ttl"><span class="icon"></span><span class="title"></span></span><span class="minmaxclose"><span class="close"></span></span><div class="body"></div></div>');
 		var dragClone = null;
 		var initStep = null;
 		var tbButton = $(`
@@ -474,7 +464,7 @@ var explorer = {
 			<span class="title">
 				<span></span>
 			</span>
-		`) 
+		`)
 		.appendTo('#taskbar #middleframe')
 		.on('mousedown touchstart', function(e) {
 			initStep = null;
@@ -626,13 +616,13 @@ var explorer = {
 		this.controlsArr = [];
 		this.controls = function(array) {
 			this.controlsArr = array;
-			$.each(this.jq.find('.minmaxclose a'), function() {
+			$.each(this.jq.find('.minmaxclose span'), function() {
 				if(!$(this).hasClass('close')) {
 					$(this).remove();
 				}
 			});
 			if($.inArray('max', array) !== -1) {
-				this.jq.find('.minmaxclose').prepend('<a class="btn_max max"></a>');
+				this.jq.find('.minmaxclose').prepend('<span class="max"></span>');
 				this.jq.children('div.resize').show();
 
 				this.jq.find('.ttl, .minmaxclose .max').off('dblclick');
@@ -652,7 +642,7 @@ var explorer = {
 				this.jq.children('div.resize').hide();
 			}
 			if($.inArray('min', array) !== -1) {
-				this.jq.find('.minmaxclose').prepend('<a class="btn_min min"></a>');
+				this.jq.find('.minmaxclose').prepend('<span class="min"></span>');
 				$('.window[windowID='+this.jq.attr('windowID')+'] .minmaxclose .min').click({window: this}, function(e) {
 					e.data.window.toggleMin();
 				});
