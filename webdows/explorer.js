@@ -459,11 +459,9 @@ var explorer = {
 		// $('#desktop').append('<div class="window" windowID="'+this.id+'"><span class="ttl"><span class="icon"></span><span class="title"></span></span><span class="minmaxclose"><span class="close"></span></span><div class="body"></div></div>');
 
 		$('#desktop').append('<div class="window" windowID="'+this.id+'">'+
-							 	// '<div class="title-bar">'+
-							 		'<div class="title-bar-text ttl"><span class="icon"></span><span class="title"></span></div>'+
-									// '<div class="title-bar-controls btn_row minmaxclose"><span><a class="btn_close close"></a></span></div>'+
-									'<div class="title-bar-controls btn_row minmaxclose"><a class="btn_close close"></a></div>'+
-							 	// '</div>'+
+							 	'<div class="title-bar-text ttl"><span class="icon"></span><span class="title"></span></div>'+
+								// '<div class="title-bar-controls btn_row minmaxclose"><span><a class="btn_close close"></a></span></div>'+
+								'<div class="title-bar-controls btn_row minmaxclose"><a class="btn_close close"></a></div>'+
 							 	'<div class="window-body window_inner body"></div>'+
 							 '</div>');
 		var dragClone = null;

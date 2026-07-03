@@ -6,7 +6,7 @@ Date: 04/12/16
 File: webdows/resources/explorer/classic/index.css
 */
 * {
-font-family:NotoSans;
+font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 #desktop {
 background-size:100% 100%;
@@ -27,14 +27,14 @@ border-left: 1px solid #808080;
 border-right: 1px solid #fff;
 border-bottom: 1px solid #fff;
 }
-button, #start, #taskbar #middleframe .button, .window .minmaxclose span {
+button, #start, #taskbar #middleframe .button, .window .minmaxclose a {
 box-shadow: inset -1px -1px 0px #808080, inset 1px 1px 0px #D2CEC6;
 border-top: 1px solid #fff;
 border-left: 1px solid #fff;
 border-right: 1px solid #424242;
 border-bottom: 1px solid #424242;
 }
-button:active, #start:active, #taskbar #middleframe .button:active, #taskbar #middleframe .button.active, .window .minmaxclose span:active {
+button:active, #start:active, #taskbar #middleframe .button:active, #taskbar #middleframe .button.active, .window .minmaxclose a:active {
 box-shadow: inset 1px 1px 0px #808080, inset -1px -1px 0px #D2CEC6;
 border-top: 1px solid #424242;
 border-left: 1px solid #424242;
@@ -170,7 +170,7 @@ right:5px;
 text-align:right;
 image-rendering:pixelated;
 }
-.window .minmaxclose span {
+.window .minmaxclose a {
 display:inline-block;
 height:12px;
 background-color:#D2CEC6;
@@ -178,21 +178,21 @@ width:14px;
 background-repeat:no-repeat;
 background-position:2px 1px;
 }
-.window .minmaxclose span:active {
+.window .minmaxclose a:active {
 background-position:3px 2px;
 }
 .window .minmaxclose .min {
 background-image:url('min.png');
 }
 .window .minmaxclose .max {
-background-image:url('max.png');
+background-image:url('mmax.png');
 }
 .window .minmaxclose .close {
 background-image:url('clo.png');
 margin-left:2px;
 }
 .window.maximized .minmaxclose .max {
-background-image:url('mmax.png');
+background-image:url('max.png');
 }
 .window.minimized {
 visibility:hidden;
@@ -507,4 +507,67 @@ margin-right:2px;
 	to {
 		opacity:1;
 	}
+}
+
+.resize {
+position:absolute;
+}
+.window.maximized .resize {
+display:none;
+}
+.resize.n {
+top:0px;
+width:100%;
+height:3px;
+left:0px;
+cursor:ns-resize;
+}
+.resize.e {
+height:100%;
+width:5px;
+right:0px;
+top:0px;
+cursor:ew-resize;
+}
+.resize.s {
+width:100%;
+height:5px;
+left:0px;
+bottom:0px;
+cursor:ns-resize;
+}
+.resize.w {
+height:100%;
+width:5px;
+left:0px;
+top:0px;
+cursor:ew-resize;
+}
+.resize.ne {
+width:5px;
+height:5px;
+cursor:ne-resize;
+right:0px;
+top:0px;
+}
+.resize.se {
+width:5px;
+height:5px;
+cursor:se-resize;
+right:0px;
+bottom:0px;
+}
+.resize.sw {
+width:5px;
+height:5px;
+cursor:sw-resize;
+left:0px;
+bottom:0px;
+}
+.resize.nw {
+width:5px;
+height:5px;
+cursor:nw-resize;
+left:0px;
+top:0px;
 }
