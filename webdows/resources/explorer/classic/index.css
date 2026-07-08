@@ -99,15 +99,15 @@ image-rendering:pixelated;
 content:"";
 display:inline-block;
 background-image:url('sta.png');
-width:18px;
-height:18px;
+width:16px;
+height:16px;
 vertical-align:-4px;
-margin-left:-1px;
-margin-right:1px;
+margin-left:1px;
+margin-right:2px;
 }
 #taskbar #rightframe #time {
 width:75px;
-font-size:14px;
+font-size:12px;
 line-height:21px;
 height:21px;
 text-align:center;
@@ -142,11 +142,11 @@ background-color:#D2CEC6;
 background-color:white;
 }
 #taskbar #middleframe .button .icon {
-width:18px;
+width:16px;
 margin-left:5px;
 margin-top:2px;
-margin-right:5px;
-height:18px;
+margin-right:0;
+height:16px;
 vertical-align:bottom;
 display:inline-block;
 }
@@ -242,7 +242,7 @@ background: linear-gradient(to right, rgba(10,36,106,1) 0%,rgba(166,202,240,1) 1
 color:white;
 }
 .window .ttl .icon {
-width:18px;
+width:16px;
 margin-left:1px;
 margin-top:1px;
 margin-right:1px;
