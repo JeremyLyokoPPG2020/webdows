@@ -32,12 +32,12 @@ input[type=text] {
 	font-family: NotoSans;
 	src: url('1.woff');
 }
-#taskbar #middleframe .button.drag:not(.clone) {
+#taskbar #middleframe .btn_taskbar.drag:not(.clone) {
 	opacity:0;
 }
-#taskbar #middleframe .button.clone {
+#taskbar #middleframe .btn_taskbar.clone {
 	position:absolute;
-	margin-left:0px;
+	/* margin-left:2px; */
 	pointer-events:none;
 }
 .icon {
