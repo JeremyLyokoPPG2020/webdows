@@ -492,7 +492,7 @@ var explorer = {
 			.addClass('clone')
 			.css({
 				left: $(this)[0].offsetLeft,
-				width: $(this).width(),
+				width: $(this).css('width') || $(this).width(),
 			})
 			.appendTo($(this).parent());
 		});
