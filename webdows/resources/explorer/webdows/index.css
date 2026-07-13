@@ -164,6 +164,7 @@ width:75px;
 text-align:center;
 }
 #taskbar #middleframe .btn_taskbar {
+max-width:157px;
 width:157px;
 height:28px;
 background-image:url('bglos.svg'),linear-gradient(to bottom, transparent 0%,rgba(255,255,255,.5) 100%), linear-gradient(to bottom, transparent 0%,rgba(254,191,1,.5) 100%);
