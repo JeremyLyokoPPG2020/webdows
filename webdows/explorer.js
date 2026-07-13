@@ -231,7 +231,15 @@ var explorer = {
 	}, initiate : function() {
 		$('#desktop.explorer').remove();
 		$('head').append('<link class="explorer" href="webdows/resources/explorer/explorer.css" rel="stylesheet" type="text/css"><link class="explorer" id="theme" href="" rel="stylesheet" type="text/css"><style></style>');
-		$('body').append('<div class="explorer" id="desktop"><div id="taskbar"><span id="leftframe"><button id="start" class="btn_start"></button></span><span id="middleframe"></span><span id="rightframe"><span id="time"></span></span></div></div>');
+		$('body').append(`<div class="explorer" id="desktop">
+							<div id="taskbar">
+								<div id="leftframe">
+									<button id="start" class="btn_start"></button>
+								</div>
+								<div id="middleframe"></div>
+								<div id="rightframe"><span id="time"></span></div>
+							</div>
+						</div>`);
 		$('#desktop.explorer').attr('style', 'visibility:hidden;');
 		explorer.start.initiate();
 		setTimeout(function() {
@@ -458,12 +466,13 @@ var explorer = {
 		
 		// $('#desktop').append('<div class="window" windowID="'+this.id+'"><span class="ttl"><span class="icon"></span><span class="title"></span></span><span class="minmaxclose"><span class="close"></span></span><div class="body"></div></div>');
 
-		$('#desktop').append('<div class="window" windowID="'+this.id+'">'+
-							 	'<div class="title-bar-text ttl"><span class="icon"></span><span class="title"></span></div>'+
-								// '<div class="title-bar-controls btn_row minmaxclose"><span><a class="btn_close close"></a></span></div>'+
-								'<div class="title-bar-controls btn_row minmaxclose"><a class="btn_close close"></a></div>'+
-							 	'<div class="window-body window_inner body"></div>'+
-							 '</div>');
+		$('#desktop').append(`<div class="window" windowID="`+this.id+`">
+								<div class="title-bar">
+							 		<div class="title-bar-text ttl"><span class="icon"></span><span class="title"></span></div>
+									<div class="title-bar-controls btn_row minmaxclose"><button class="btn_close close"></button></div>
+								</div>
+							 	<div class="window-body window_inner body"></div>
+							 </div>`);
 		var dragClone = null;
 		var initStep = null;
 		var tbButton = $(`
@@ -625,13 +634,13 @@ var explorer = {
 		this.controlsArr = [];
 		this.controls = function(array) {
 			this.controlsArr = array;
-			$.each(this.jq.find('.minmaxclose a'), function() {
+			$.each(this.jq.find('.minmaxclose button'), function() {
 				if(!$(this).hasClass('close')) {
 					$(this).remove();
 				}
 			});
 			if($.inArray('max', array) !== -1) {
-				this.jq.find('.minmaxclose').prepend('<a class="btn_max max"></a>');
+				this.jq.find('.minmaxclose').prepend('<button class="btn_max max"></button>');
 				this.jq.children('div.resize').show();
 
 				this.jq.find('.ttl, .minmaxclose .max').off('dblclick');
@@ -651,7 +660,7 @@ var explorer = {
 				this.jq.children('div.resize').hide();
 			}
 			if($.inArray('min', array) !== -1) {
-				this.jq.find('.minmaxclose').prepend('<a class="btn_min min"></a>');
+				this.jq.find('.minmaxclose').prepend('<button class="btn_min min"></button>');
 				$('.window[windowID='+this.jq.attr('windowID')+'] .minmaxclose .min').click({window: this}, function(e) {
 					e.data.window.toggleMin();
 				});

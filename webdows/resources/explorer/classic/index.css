@@ -28,7 +28,7 @@ border-left: 1px solid #808080;
 border-right: 1px solid #fff;
 border-bottom: 1px solid #fff;
 }
-button, #start, #taskbar #middleframe .btn_taskbar, #taskbar #middleframe .btn_taskbar, .window .minmaxclose a {
+button, #start, #taskbar #middleframe .btn_taskbar, #taskbar #middleframe .btn_taskbar, .window .minmaxclose button {
 box-shadow: inset -1px -1px 0px #808080, inset 1px 1px 0px #D2CEC6;
 border-top: 1px solid #fff;
 border-left: 1px solid #fff;
@@ -36,7 +36,7 @@ border-right: 1px solid #424242;
 border-bottom: 1px solid #424242;
     font-size: 12px;
 }
-button:active, #start:active, #taskbar #middleframe .btn_taskbar:active, #taskbar #middleframe .btn_taskbar.active, .window .minmaxclose a:active {
+button:active, #start:active, #taskbar #middleframe .btn_taskbar:active, #taskbar #middleframe .btn_taskbar.active, .window .minmaxclose button:active {
 box-shadow: inset 1px 1px 0px #808080, inset -1px -1px 0px #D2CEC6;
 border-top: 1px solid #424242;
 border-left: 1px solid #424242;
@@ -194,22 +194,22 @@ display:none;
 }
 .window .minmaxclose {
 height:20px;
-display:inline-block;
+display:flex;
 position:absolute;
 top:5px;
 right:5px;
 text-align:right;
 image-rendering:pixelated;
 }
-.window .minmaxclose a {
-display:inline-block;
-height:12px;
+.window .minmaxclose button {
+display:block;
+width:16px;
+height:14px;
 background-color:#D2CEC6;
-width:14px;
 background-repeat:no-repeat;
 background-position:2px 1px;
 }
-.window .minmaxclose a:active {
+.window .minmaxclose button:active {
 background-position:3px 2px;
 }
 .window .minmaxclose .min {
@@ -231,7 +231,7 @@ opacity:0;
 }
 .window.maximized {
 width:100% !important;
-height:calc(100% - 30px) !important;
+height:calc(100% - 28px) !important;
 top:0px !important;
 left:0px !important;
 border:none;
@@ -250,9 +250,9 @@ top:19px;
 }
 .window.maximized .minmaxclose {
 right:3px;
-top:-1px;
+top:2px;
 }
-.window .ttl {
+.window .title-bar {
 margin:3px 3px 0 3px;
 color:white;
 font-size:12px;
@@ -266,7 +266,7 @@ color:lightgray;
 line-height:18px;
 padding-right:55px;
 }
-.window.active .ttl {
+.window.active .title-bar {
 background: linear-gradient(to right, rgba(10,36,106,1) 0%,rgba(166,202,240,1) 100%);
 color:white;
 }
@@ -351,7 +351,7 @@ top:0px;
 }
 #startmenu {
 position:absolute;
-bottom:31px;
+bottom:28px;
 left:0px;
 width:409px;
 height:474px;
@@ -599,4 +599,7 @@ height:5px;
 cursor:nw-resize;
 left:0px;
 top:0px;
+}
+.window.menuBar .body{
+    top: 36px;
 }
